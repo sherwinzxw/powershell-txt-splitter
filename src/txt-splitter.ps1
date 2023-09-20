@@ -27,7 +27,6 @@ New-Item -Path "output/extraction_$timestamp" -ItemType Directory
 #iterate through the string array and output the indexed string to output folder
 for ($i=0; $i -lt $outputArray.Length; $i++) 
 { 
-  if($i -gt 0){      
     if($MATCHSTRING -eq "`n") {
       $outputstring = $outputArray[$i]
       $exportPath = "$outputFolderPathRelative/statement-$i.txt"
@@ -38,5 +37,4 @@ for ($i=0; $i -lt $outputArray.Length; $i++)
       $exportPath = "$outputFolderPathRelative/statement-$i.txt"
       $outputstring | Out-File -FilePath $exportPath 
     }
-  }
 }
